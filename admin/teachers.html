@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Teachers - SMS</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2>SMS Admin</h2>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="teachers.html" class="active">Manage Teachers</a></li>
+                    <li><a href="../index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Teacher Management</h1>
+                <button class="btn btn-primary" style="width: auto;" onclick="alert('Open Add Teacher Form')">+ Register New Teacher</button>
+            </header>
+
+            <div class="card">
+                <p style="margin-bottom: 20px; color: #666;">As Admin, you authorize teachers. Teachers then manage their own students.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Subject</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mr. Robert Smith</td>
+                            <td>r.smith@school.com</td>
+                            <td>Mathematics</td>
+                            <td><span class="badge badge-active">Active</span></td>
+                            <td><button style="color: var(--accent-color); border: none; background: none; cursor: pointer;">Edit Profile</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+
