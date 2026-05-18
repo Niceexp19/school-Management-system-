@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Grades - SMS</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2>SMS Teacher</h2>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="students.html">Manage Students</a></li>
+                    <li><a href="grades.html" class="active">Enter Grades</a></li>
+                    <li><a href="../index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Enter Student Scores</h1>
+                <button class="btn btn-primary" style="width: auto;" onclick="alert('Results Published!')">Publish All Results</button>
+            </header>
+
+            <div class="card">
+                <h3>Mathematics - Grade 10</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>CA (30)</th>
+                            <th>Exam (70)</th>
+                            <th>Total (100)</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Alex Johnson</td>
+                            <td><input type="number" style="width:60px" class="ca" value="24"></td>
+                            <td><input type="number" style="width:60px" class="exam" value="54"></td>
+                            <td class="total">78</td>
+                            <td class="grade">B</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Simple calculation logic
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('input', function() {
+                let row = this.closest('tr');
+                let ca = parseInt(row.querySelector('.ca').value) || 0;
+                let exam = parseInt(row.querySelector('.exam').value) || 0;
+                let total = ca + exam;
+                row.querySelector('.total').innerText = total;
+                row.querySelector('.grade').innerText = total >= 80 ? 'A' : total >= 70 ? 'B' : 'C';
+            });
+        });
+    </script>
+</body>
+</html>
+  
