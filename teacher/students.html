@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Students - SMS</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2>SMS Teacher</h2>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="students.html" class="active">Manage Students</a></li>
+                    <li><a href="grades.html">Enter Grades</a></li>
+                    <li><a href="../index.html">Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Student Management</h1>
+                <button class="btn btn-primary" style="width: auto;" onclick="document.getElementById('addStudentModal').style.display='block'">+ Add New Student</button>
+            </header>
+
+            <div class="card">
+                <h3>Students Registered by You</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Class</th>
+                            <th>Admission No</th>
+                            <th>Parent Access Code</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Alex Johnson</td>
+                            <td>Grade 10</td>
+                            <td>STU-8821</td>
+                            <td><code>ALX-8821</code></td>
+                            <td><button style="color: var(--accent-color); border: none; background: none; cursor: pointer;">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Add Student Modal (Visual Demo) -->
+            <div id="addStudentModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+                <div class="card" style="width:400px; margin:100px auto;">
+                    <h2>Add New Student</h2>
+                    <form onsubmit="event.preventDefault(); alert('Student Added to System!'); document.getElementById('addStudentModal').style.display='none';">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="e.g. Emma Ross" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Class</label>
+                            <select>
+                                <option>Grade 10</option>
+                                <option>Grade 11</option>
+                                <option>Grade 12</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Admission Number</label>
+                            <input type="text" placeholder="STU-001" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Student</button>
+                        <button type="button" class="btn" style="margin-top:10px; background:#ccc;" onclick="document.getElementById('addStudentModal').style.display='none'">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+          
